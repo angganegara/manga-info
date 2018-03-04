@@ -1,18 +1,31 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
+import { Switch, Route } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
 
-const mapStateToProps = state => {}
-const mapDispatchToProps = dispatch => {}
-
+import Manga from '../Manga';
+import MangaDetails from '../Manga/MangaDetails';
+import MangaResult from '../Manga/MangaResult';
+import Header from '../../components/Header';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
-      <div>React/Redux Boilerplate</div>
+      <div className="app">
+        <Route component={Header} />
+        <Container fluid>
+          <Switch>
+            <Route exact path="/" component={Manga} />
+            <Route path="/search" component={MangaResult} />
+            <Route path="/manga/:id" component={MangaDetails} />
+          </Switch>
+        </Container>
+      </div>
     )
   }
 }
-
-App = connect(mapStateToProps, mapDispatchToProps)(App);
 
 export default App;

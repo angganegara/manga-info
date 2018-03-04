@@ -1,10 +1,11 @@
 {
-  "name": "react-webpack",
+  "name": "manga-info",
   "version": "1.0.0",
   "main": "src/index.js",
   "author": "Angga Negara",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -14,11 +15,13 @@
     "css-loader": "^0.28.9",
     "deep-freeze": "^0.0.1",
     "extract-text-webpack-plugin": "^3.0.2",
+    "gsap": "^1.20.4",
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.7.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.6",
@@ -29,7 +32,7 @@
     "webpack-dev-server": "^2.11.1"
   },
   "scripts": {
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server --open --history-api-fallback",
     "build": "webpack --production"
   }
 }

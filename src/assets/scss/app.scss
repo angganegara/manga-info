@@ -1,11 +1,52 @@
 $primary-font: 'Proxima Nova', sans-serif;
 
 body {
-  background-color: #fff;
+  background-color: #e9e9e9;
   font-family: $primary-font;
   font-size: 14px;
 }
 
 h1,h2,h3,h4,h5 {
   font-family: $primary-font;
+}
+
+.container.fluid {
+  padding: 1.5rem;
+}
+
+header {
+  background-color: #f1f1f1;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  .logo {
+    font-variant: small-caps;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #ff3b3f;
+    margin: 0;
+  }
+
+  > .search {
+    width: 300px;
+    text-align: right;
+  }
+}
+
+.pin {
+  transition: .2s ease-in-out all;
+  transform: scale(1.5);
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  opacity: 0;
+  z-index: 99;
+}
+
+.ui.cards>.card:hover .pin {
+  opacity: 1;
+  transform: scale(1);
 }

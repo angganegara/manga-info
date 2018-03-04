@@ -33,6 +33,12 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    port: 3000,
+    historyApiFallback: {
+      index: 'index.html'
+    }
+  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
