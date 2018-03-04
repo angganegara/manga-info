@@ -10,6 +10,7 @@ export const searchManga = search => (dispatch, getState) => {
 }
 //export const searchMangaSuccess = manga => ({ type: 'SEARCH_MANGA_SUCCESS', manga });
 export const toggleSearchLoading = () => ({ type: 'TOGGLE_SEARCH_LOADING' });
+export const toggleView = view => ({ type: 'TOGGLE_VIEW', view });
 
 export const addManga = manga => ({ type: 'ADD_MANGA', manga });
 export const removeManga = id => ({ type: 'REMOVE_MANGA', id });

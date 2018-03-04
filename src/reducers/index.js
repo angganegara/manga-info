@@ -6,8 +6,14 @@ const initialState = localData ? JSON.parse(localData) : {
   books: [],
   search: '',
   searchResult: [],
-  searchLoading: false
+  searchLoading: false,
+  view: 'grid'
 };
+
+if (!initialState.view) {
+  initialState.view = 'grid';
+  ls.setItem('localData', JSON.stringify(initialState));
+}
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -29,6 +35,12 @@ const reducer = (state = initialState, action) => {
         searchResult: action.manga.filter(book => {
           return book.t.toLowerCase().includes(state.search.toLowerCase());
         })
+      }
+    
+    case 'TOGGLE_VIEW':
+      return {
+        ...state,
+        view: action.view
       }
 
     case 'ADD_MANGA':
